@@ -2,7 +2,18 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 export default function App() {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
-  return <div className='App'>test</div>;
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register('firstName', { required: true })} />
+      <select {...register('gender', { required: true })}>
+        <option value='female'>female</option>
+        <option value='male'>male</option>
+        <option value='other'>other</option>
+      </select>
+      <input type='submit' />
+    </form>
+  );
 }
