@@ -68,3 +68,4 @@ export default function App() {
 
 버전 6.~ 의 예제코드를 그대로 쓰니 <input name="example" ref={register} /> ref 부분에서 오류가 났다.
 해당 부분을 {...register( name부분, { required: true })} 이렇게 고치니 오류가 사라졌다.  
+
